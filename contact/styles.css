@@ -1,0 +1,142 @@
+/* HTML Background Color */
+html {
+    background-color: #000000;
+}
+
+
+/* Top Margin, Height, Overflow */
+body {
+    margin-top: 0;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-top: 56px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('forest.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.3; /* Opacity */
+    z-index: -1; /* Ensure the background is behind the content */
+}
+/* Banner Styles */
+#banner{
+    text-align: center;
+    color: white;
+    font-family: Geneva; /* Geneva font */
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* cambiar a space-between si quieres logo a la izquierda */
+    padding: 0 1rem;
+    box-sizing: border-box;
+    background-color: rgba(19, 43, 66, 0.35); /* menos opacidad para ver más el fondo */
+    color: #fff;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    white-space: nowrap;
+    overflow-x: auto;
+    opacity: 0.6;
+}
+
+/* Reset y estilo de la lista dentro del menú */
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.5rem; /* espacio entre items (separador visual aparte) */
+    align-items: center;
+}
+
+/* Añadir división entre elementos: usar borde izquierdo en cada li excepto el primero */
+#menu ul li {
+    display: flex;
+    align-items: center;
+}
+#menu ul li + li {
+    border-left: 1px solid rgba(255,255,255,0.12);
+    padding-left: 0.75rem;
+    margin-left: 0.75rem; /* separación para que el borde no quede pegado */
+}
+
+/* Links del menú: agrandar al pasar el ratón */
+#menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    display: inline-block;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+    transform-origin: center;
+    will-change: transform;
+}
+
+#menu a:hover,
+#menu a:focus {
+    background-color: rgba(255,255,255,0.06);
+    transform: scale(1.5);
+    outline: none;
+}
+
+/* SNOW ❄️ */
+.snow {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.flake {
+    position: absolute;
+    top: -10px;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation-name: snow-fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: transform;
+}
+
+@keyframes snow-fall {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-200px, 110vh);
+    }
+}
+
+
+.flake:nth-child(1)  { left: 5%;  animation-duration: 6s;  animation-delay: 0s;  opacity: .6; }
+.flake:nth-child(2)  { left: 15%; animation-duration: 9s;  animation-delay: 2s;  width: 4px; height: 4px; }
+.flake:nth-child(3)  { left: 25%; animation-duration: 7s;  animation-delay: 1s; }
+.flake:nth-child(4)  { left: 35%; animation-duration: 10s; animation-delay: 3s; opacity: .5; }
+.flake:nth-child(5)  { left: 45%; animation-duration: 8s;  animation-delay: 0s; width: 3px; height: 3px; }
+.flake:nth-child(6)  { left: 55%; animation-duration: 11s; animation-delay: 4s; }
+.flake:nth-child(7)  { left: 65%; animation-duration: 9s;  animation-delay: 1s; opacity: .7; }
+.flake:nth-child(8)  { left: 75%; animation-duration: 6s;  animation-delay: 2s; }
+.flake:nth-child(9)  { left: 85%; animation-duration: 12s; animation-delay: 5s; width: 5px; height: 5px; }
+.flake:nth-child(10) { left: 95%; animation-duration: 7s;  animation-delay: 0s; }

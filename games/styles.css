@@ -1,0 +1,98 @@
+/* HTML Background Color */
+html {
+    background-color: #000000;
+}
+
+
+/* Top Margin, Height, Overflow */
+body {
+    margin-top: 0;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-top: 56px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('asadal_stock_32.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.3; /* Opacity */
+    z-index: -1; /* Ensure the background is behind the content */
+}
+/* Banner Styles */
+#banner{
+    text-align: center;
+    color: white;
+    font-family: 'Geneva'; /* Geneva font */
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* cambiar a space-between si quieres logo a la izquierda */
+    padding: 0 1rem;
+    box-sizing: border-box;
+    background-color: rgba(0, 102, 204, 0.35); /* menos opacidad para ver más el fondo */
+    color: #fff;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    white-space: nowrap;
+    overflow-x: auto;
+    opacity: 0.6;
+}
+
+/* Reset y estilo de la lista dentro del menú */
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.5rem; /* espacio entre items (separador visual aparte) */
+    align-items: center;
+}
+
+/* Añadir división entre elementos: usar borde izquierdo en cada li excepto el primero */
+#menu ul li {
+    display: flex;
+    align-items: center;
+}
+#menu ul li + li {
+    border-left: 1px solid rgba(255,255,255,0.12);
+    padding-left: 0.75rem;
+    margin-left: 0.75rem; /* separación para que el borde no quede pegado */
+}
+
+/* Links del menú: agrandar al pasar el ratón */
+#menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    display: inline-block;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+    transform-origin: center;
+    will-change: transform;
+}
+
+#menu a:hover,
+#menu a:focus {
+    background-color: rgba(255,255,255,0.06);
+    transform: scale(1.5);
+    outline: none;
+}
