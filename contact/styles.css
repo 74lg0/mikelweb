@@ -3,7 +3,6 @@ html {
     background-color: #000000;
 }
 
-
 /* Top Margin, Height, Overflow */
 body {
     margin-top: 0;
@@ -97,46 +96,72 @@ body::before {
     outline: none;
 }
 
+
+.Z4lg0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.Z4lg0 img {
+    border-radius: 50%;
+    border: 2px solid #888888;
+    box-shadow: 0 0 20px #888888,
+                0 0 30px #888888,
+                0 0 40px #888888,
+                0 0 50px #888888;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.Z4lg0 img:hover {
+    box-shadow: 0 0 30px #ffffff,
+                0 0 40px #ffffff,
+                0 0 50px #ffffff,
+                0 0 60px #ffffff;
+}
+
+#Username{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #20135e;
+
+}
+
+
 /* SNOW ❄️ */
 .snow {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    overflow: hidden;
     z-index: 999;
 }
 
 .flake {
     position: absolute;
     top: -10px;
+    left: 50%;
     width: 6px;
     height: 6px;
     background: white;
     border-radius: 50%;
-    opacity: 0.8;
-    animation-name: snow-fall;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    will-change: transform;
+    animation: snow-fall 6s linear infinite;
 }
 
 @keyframes snow-fall {
-    from {
-        transform: translate(0, 0);
-    }
     to {
-        transform: translate(-200px, 110vh);
+        transform: translate(-100px, 110vh);
     }
 }
 
-
-.flake:nth-child(1)  { left: 5%;  animation-duration: 6s;  animation-delay: 0s;  opacity: .6; }
-.flake:nth-child(2)  { left: 15%; animation-duration: 9s;  animation-delay: 2s;  width: 4px; height: 4px; }
-.flake:nth-child(3)  { left: 25%; animation-duration: 7s;  animation-delay: 1s; }
-.flake:nth-child(4)  { left: 35%; animation-duration: 10s; animation-delay: 3s; opacity: .5; }
-.flake:nth-child(5)  { left: 45%; animation-duration: 8s;  animation-delay: 0s; width: 3px; height: 3px; }
-.flake:nth-child(6)  { left: 55%; animation-duration: 11s; animation-delay: 4s; }
-.flake:nth-child(7)  { left: 65%; animation-duration: 9s;  animation-delay: 1s; opacity: .7; }
-.flake:nth-child(8)  { left: 75%; animation-duration: 6s;  animation-delay: 2s; }
-.flake:nth-child(9)  { left: 85%; animation-duration: 12s; animation-delay: 5s; width: 5px; height: 5px; }
-.flake:nth-child(10) { left: 95%; animation-duration: 7s;  animation-delay: 0s; }
+/* ===== DISTRIBUCIÓN Y VARIACIÓN ===== */
+.flake:nth-child(1)  { left: 5%;  animation-duration: 5s;  opacity: .6; }
+.flake:nth-child(2)  { left: 15%; animation-duration: 7s;  animation-delay: 1s; width: 4px; height: 4px; }
+.flake:nth-child(3)  { left: 25%; animation-duration: 6s; }
+.flake:nth-child(4)  { left: 35%; animation-duration: 8s;  animation-delay: 2s; opacity: .5; }
+.flake:nth-child(5)  { left: 45%; animation-duration: 6.5s; width: 3px; height: 3px; }
+.flake:nth-child(6)  { left: 55%; animation-duration: 9s;  animation-delay: 3s; }
+.flake:nth-child(7)  { left: 65%; animation-duration: 7s;  opacity: .7; }
+.flake:nth-child(8)  { left: 75%; animation-duration: 5.5s; animation-delay: 1.5s; }
+.flake:nth-child(9)  { left: 85%; animation-duration: 10s; animation-delay: 4s; width: 5px; height: 5px; }
+.flake:nth-child(10) { left: 95%; animation-duration: 6s; }
